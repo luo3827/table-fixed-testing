@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" href="css/bootstrap-table-fixed-columns.css" />
+            <link type="text/css" href="css/fixedColumns.dataTables.css" />
+            
+            <script src="js/jquery-1.10.2.min.js"></script>
+            <script src="js/jquery.dataTables.js"></script>
+            <script src="js/dataTables.fixedColumns.js"></script>
+    <style>
+        th, td { white-space: nowrap; }
+        div.dataTables_wrapper {
+            width: 800px;
+            margin: 0 auto;
+            }
+        tr td:first{
+            background: black;
+        }
+    </style>
+
+</head>
+<body>
+<table id="example" class="stripe row-border order-column" cellspacing="0" width="100%">
+            <thead>
+        <tr>
+                <th>姓</th>
+                <th>名字</th>
+                <th>住址</th>
+                <th>办公地址</th>
+                <th>年龄</th>
+                <th>开始日期</th>
+                <th>收入水平</th>
+                <th>备注</th>
+                <th>邮箱</th>
+            </tr>
+        </thead>
+            <tbody>   
+        <tr>
+                <td>Cara</td>
+                <td>Stevens</td>
+                <td>Sales Assistant</td>
+                <td>New York</td>
+                <td>46</td>
+                <td>2011/12/06</td>
+                <td>$145,600</td>
+                <td>3990</td>
+                <td>c.stevens@datatables.net</td>
+            </tr>
+        <tr>
+                <td>Hermione</td>
+                <td>Butler</td>
+                <td>Regional Director</td>
+                <td>London</td>
+                <td>47</td>
+                <td>2011/03/21</td>
+                <td>$356,250</td>
+                <td>1016</td>
+                <td>h.butler@datatables.net</td>
+            </tr>
+        <tr>
+                <td>Lael</td>
+                <td>Greer</td>
+                <td>Systems Administrator</td>
+                <td>London</td>
+                <td>21</td>
+                <td>2009/02/27</td>
+                <td>$103,500</td>
+                <td>6733</td>
+                <td>l.greer@datatables.net</td>
+            </tr>
+        <tr>
+                <td>Jonas</td>
+                <td>Alexander</td>
+                <td>Developer</td>
+                <td>San Francisco</td>
+                <td>30</td>
+                <td>2010/07/14</td>
+                <td>$86,500</td>
+                <td>8196</td>
+                <td>j.alexander@datatables.net</td>
+            </tr>
+        <tr>
+                <td>Shad</td>
+                <td>Decker</td>
+                <td>Regional Director</td>
+                <td>Edinburgh</td>
+                <td>51</td>
+                <td>2008/11/13</td>
+                <td>$183,000</td>
+                <td>6373</td>
+                <td>s.decker@datatables.net</td>
+            </tr>
+        <tr>
+                <td>Michael</td>
+                <td>Bruce</td>
+                <td>Javascript Developer</td>
+                <td>Singapore</td>
+                <td>29</td>
+                <td>2011/06/27</td>
+                <td>$183,000</td>
+                <td>5384</td>
+                <td>m.bruce@datatables.net</td>
+            </tr>
+        <tr>
+                <td>Donna</td>
+                <td>Snider</td>
+                <td>Customer Support</td>
+                <td>New York</td>
+                <td>27</td>
+                <td>2011/01/25</td>
+                <td>$112,000</td>
+                <td>4226</td>
+                <td>d.snider@datatables.net</td>
+            </tr>
+        </tbody>
+        </table>
+<script>
+    $(function(){
+        //初始化一下fixedColumns
+//        $.extend( $.fn.dataTable.defaults, {
+//            searching: false,
+//            ordering:  false
+//        } );
+
+        var table = $('#example').DataTable( {
+            //锁定行
+//            scrollY:        "300px",
+            //锁定列
+            scrollX:        true,
+            scrollCollapse: true,
+//            paging:         false,
+            //锁定列个数
+            fixedColumns: {
+                iRightColumns:1,
+                iLeftColumns:0
+            }
+
+        } );
+    })
+//        new $.fn.dataTable.FixedColumns(table,{"iLeftColumns":2})
+//        new $.fn.dataTable("#example",{scrollX:true,fixedColumns:{iRightColumns:1} })
+</script>
+</body>
+</html>
